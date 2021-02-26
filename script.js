@@ -189,11 +189,11 @@ const predict = () => {
         "dropoff_latitude": parseFloat(document.getElementById('dropoff_latitude').value) || 40.802,
         "dropoff_longitude": parseFloat(document.getElementById('dropoff_longitude').value) || -73.956,
         "passenger_count": parseInt(document.getElementById('passenger_count').value) || 2,
-        "pickup_datetime": `${document.getElementById('pickup_datetime').value} UTC`
+        "pickup_datetime": '${document.getElementById('pickup_datetime').value} UTC'
       };
       let query = []
       Object.keys(data).forEach((param) => {
-        query.push(`${param}=${data[param]}`)
+        query.push('${param}=${data[param]}')
       })
       const querystring = query.join('&')
       const url = '${taxiFareApiUrl}?${querystring}'
